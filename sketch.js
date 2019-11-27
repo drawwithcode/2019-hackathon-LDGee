@@ -7,7 +7,6 @@ var g = 103;
 var b = 167;
 var fft;
 
-
 function preload() {
   logocerchio = loadImage("./assets/titolorosa.png");
   terra = loadImage("./assets/terra.png");
@@ -29,7 +28,6 @@ function setup() {
 
   //create the ftt object
   fft = new p5.FFT();
-
 
 }
 
@@ -72,8 +70,6 @@ function draw() {
     text("YOU ARE STILL ALIVE", 0, 130);
     pop();
 
-
-
   } else {
     //clear();
     background(r, g, b);
@@ -84,8 +80,9 @@ function draw() {
     strokeWeight(0.8);
     stroke(248, 225, 255);
     textFont("Roboto Mono");
-    textSize(30);
+    textSize(25);
     text("click to discover the most incredible news of the day", windowWidth / 2, windowHeight / 2);
+    text("!!!!!", windowWidth / 2, windowHeight / 2 + 50);
   }
 }
 
@@ -93,11 +90,13 @@ function draw() {
 function mouseClicked() {
   if (suono.isPlaying() == false) {
     suono.play();
+    //this is to add the option to stop the sound with a second click
     // } else {
     //   suono.pause();
   }
 }
 
+//resize the canvas everytime window is resized
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
